@@ -1,0 +1,40 @@
+﻿@model CloudServiceCalc.Models.CloudService
+
+@{
+    ViewData["Title"] = "CalculateServiceCost";
+}
+
+<h1>CalculateServiceCost</h1>
+
+<h4>CloudService</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CalculateServiceCost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InstanceSize" class="control-label"></label>
+                @Html.DropDownList("InstanceSize")
+                <!--<input asp-for="InstanceSize" class="form-control" />-->
+                <span asp-validation-for="InstanceSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoInstances" class="control-label"></label>
+                <input asp-for="NoInstances" class="form-control" />
+                <span asp-validation-for="NoInstances" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearlyCost" class="control-label"></label>
+                <input asp-for="YearlyCost" class="form-control" />
+                <span asp-validation-for="YearlyCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Calculate Annual Cost" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

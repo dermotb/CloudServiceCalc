@@ -1,0 +1,35 @@
+﻿@model CloudServiceCalc.Models.CloudService
+
+@{
+    ViewData["Title"] = "Confirm";
+}
+
+<h1>Confirm</h1>
+
+<div>
+    <h4>CloudService</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.InstanceSize)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.InstanceSize)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NoInstances)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NoInstances)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YearlyCost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YearlyCost)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="CalculateServiceCost">Back to Service calculation</a>
+</div>
